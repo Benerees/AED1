@@ -66,17 +66,6 @@ int pilhaVazia(PilhaDinamica pilha){
   return pilha.topo == NULL;
 }
 
-int imprimePilha(PilhaDinamica Pilha){
-  PNoh ptrAux = Pilha.topo;
-
-  while(ptrAux!=NULL)
-  {
-    printf("\n%c %c %c\n", ptrAux->item.Esquerda[0], ptrAux->item.Direita[0] ,ptrAux->item.Valor[0]);
-
-    ptrAux = ptrAux->prox;
-  }
-}
-
 void empilha(PilhaDinamica *Pilha, TipoItem item, int tipo){
   PNoh novo;
   
@@ -247,7 +236,7 @@ int main(void) {
   inicializaPilha(&PilhaVerifica);
 
   entradas(M,N, &PilhaSintaxe, &PilhaExpressao);
-  
+
   result = resolveProblema(&PilhaSintaxe, &PilhaExpressao, &PilhaVerifica);
   
   return 0;
